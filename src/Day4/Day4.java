@@ -1,6 +1,10 @@
+package Day4;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Day4
 {
@@ -13,6 +17,49 @@ public class Day4
         cards = new ArrayList<>();
         winningCards = new ArrayList<BingoCard>();
     }
+
+
+    public static Day4 createDay4Data()
+    {
+        Day4 day4 = new Day4();
+        try
+        {
+            File myObj = new File("inputs/day4.txt");
+            Scanner myReader = new Scanner(myObj);
+
+            //First line is numbers
+            String[] numbersLine = myReader.nextLine().split(",");
+            day4.numbers = Arrays.stream(numbersLine).mapToInt(Integer::parseInt).toArray();
+
+            ArrayList<String> cardLines = new ArrayList<>();
+            while (myReader.hasNextLine())
+            {
+                String line = myReader.nextLine();
+                line = line.replaceAll("  ", " ").trim();
+
+                if(line.length() > 0)
+                {
+                    cardLines.add(line);
+                }
+
+                if(cardLines.size() == 5)
+                {
+                    day4.createCard(cardLines.stream().toArray(String[]::new));
+                    cardLines.clear();
+                }
+
+            }
+            myReader.close();
+        }
+        catch (Exception e)
+        {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+        return day4;
+    }
+
 
     public void createCard(String[] cardLines)
     {
@@ -53,19 +100,16 @@ public class Day4
                         else
                             break;
                     }
-
                 }
             }
         }
 
-        //There was no final card, so just grab the one added last to the winningCards List
         if(!part1)
         {
             var last = winningCards.get(winningCards.size() - 1);
             System.out.println("total: " + last.total + " mult: " + last.localeIndex + " result " + last.total * last.localeIndex);
             return last.total *last.localeIndex;
         }
-
         return -1;
     }
 
@@ -77,7 +121,6 @@ public class Day4
             card.tryMarkValid(number);
         }
     }
-
 
     public int getUnmarkedTotalOfWinningCard()
     {
@@ -236,19 +279,13 @@ public class Day4
             {
                 this.value = value;
             }
-
             public int value;
             public boolean isValid;
-
-
             @Override
             public String toString()
             {
                 return value + "" + (isValid ? "*" : "");
             }
-
         }
-
     }
-
 }
