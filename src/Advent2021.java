@@ -15,9 +15,55 @@ class Advent2021
         //System.out.println(AdventDay2.part1()); ☠
         //System.out.println(AdventDay2.part2());
 
-        AdventDay3.readData();
+        //AdventDay3.readData();
         //AdventDay3.part1();
-        AdventDay3.part2();
+        //AdventDay3.part2();
+
+        var day4 = createDay4Data();
+        day4.validateNumbers(false);
+
+    }
+
+
+    public static Day4 createDay4Data()
+    {
+        Day4 day4 = new Day4();
+        try
+        {
+            File myObj = new File("inputs/day4.txt");
+            Scanner myReader = new Scanner(myObj);
+
+            //First line is numbers
+            String[] numbersLine = myReader.nextLine().split(",");
+            day4.numbers = Arrays.stream(numbersLine).mapToInt(Integer::parseInt).toArray();
+
+            ArrayList<String> cardLines = new ArrayList<>();
+            while (myReader.hasNextLine())
+            {
+                String line = myReader.nextLine();
+                line = line.replaceAll("  ", " ").trim();
+
+                if(line.length() > 0)
+                {
+                    cardLines.add(line);
+                }
+
+                if(cardLines.size() == 5)
+                {
+                    day4.createCard(cardLines.stream().toArray(String[]::new));
+                    cardLines.clear();
+                }
+
+            }
+            myReader.close();
+        }
+        catch (Exception e)
+        {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+        return day4;
     }
 
     public static class AdventDay3
