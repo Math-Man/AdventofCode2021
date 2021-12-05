@@ -1,12 +1,4 @@
-import Day1.Day1;
-import Day2.Day2;
-import Day3.Day3;
-import Day4.Day4;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import Day5.Day5;
 
 class Advent2021
 {
@@ -21,9 +13,10 @@ class Advent2021
         //Day3.readData();
         //Day3.part1();
         //Day3.part2();
-        var day4 = Day4.createDay4Data();
-        day4.validateNumbers(false);
+        //var day4 = Day4.createDay4Data();
+        //day4.validateNumbers(false);
 
+        System.out.println(Day5.DO_THE_THING_LOL(true));
     }
 
 
