@@ -1,5 +1,4 @@
-import Day5.Day5;
-import Day6.Day6;
+import Day7.Day7;
 
 class Advent2021
 {
@@ -17,8 +16,8 @@ class Advent2021
         //var day4 = Day4.createDay4Data();
         //day4.validateNumbers(false);
         //System.out.println(Day5.DO_THE_THING_LOL(true));
-        Day6.DOTHETHINGBUTSMART();
-
+        //Day6.DOTHETHINGBUTSMART();
+        Day7.crabs(false);
 
     }
 
