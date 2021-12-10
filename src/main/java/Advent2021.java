@@ -1,5 +1,6 @@
 import Day8.Day8;
 import Day9.Day9;
+import Day10.Day10;
 class Advent2021
 {
     public static void main(String[] args)
@@ -19,7 +20,8 @@ class Advent2021
         //Day6.DOTHETHINGBUTSMART();
         //Day7.crabs(false);
         //Day8.part2();
-        Day9.part2();
+        //Day9.part2();
+        Day10.part1(true);
     }
 
 
