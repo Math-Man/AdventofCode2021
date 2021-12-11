@@ -1,6 +1,4 @@
-import Day8.Day8;
-import Day9.Day9;
-import Day10.Day10;
+import Day11.Day11;
 class Advent2021
 {
     public static void main(String[] args)
@@ -21,7 +19,7 @@ class Advent2021
         //Day7.crabs(false);
         //Day8.part2();
         //Day9.part2();
-        Day10.part1(true);
+        Day11.Squid();
     }
 
 
