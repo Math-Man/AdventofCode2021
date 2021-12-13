@@ -1,5 +1,4 @@
-import Day11.Day11;
-import Day12.Day12;
+import Day13.Day13;
 class Advent2021
 {
     public static void main(String[] args)
@@ -21,8 +20,9 @@ class Advent2021
         //Day8.part2();
         //Day9.part2();
         //Day11.Squid();
-        Day12.buildNodes();
-        Day12.pathFindPart1();
+        //Day12.buildNodes();
+        //Day12.pathFindPart1();
+        Day13.symmetry(false);
     }
 
 
