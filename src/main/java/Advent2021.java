@@ -1,4 +1,8 @@
-import Day13.Day13;
+//import Day13.Day13;
+import Day14.Day14;
+
+import java.io.IOException;
+
 class Advent2021
 {
     public static void main(String[] args)
@@ -22,7 +26,9 @@ class Advent2021
         //Day11.Squid();
         //Day12.buildNodes();
         //Day12.pathFindPart1();
-        Day13.symmetry(false);
+        //Day13.symmetry(false);
+        Day14.day14(40);
+
     }
 
 
