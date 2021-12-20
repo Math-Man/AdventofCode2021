@@ -1,12 +1,15 @@
 //import Day13.Day13;
 import Day16.Day16;
 import Day17.Day17;
+import Day18.Day18;
+import Day20.Day20;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 class Advent2021
 {
-    public static void main(String[] args) throws FileNotFoundException
+    public static void main(String[] args) throws IOException
     {
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
         //Day1.part1();
@@ -33,7 +36,9 @@ class Advent2021
         //Day16 dl = new Day16();
         //dl.Init();
         //dl.Part1();
-        Day17.part1();
+        //Day17.part2();
+        //Day18.solve();
+        Day20.solve(50);
     }
 
 
